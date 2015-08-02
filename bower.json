@@ -1,0 +1,10 @@
+{
+  "name": "template-responsivo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dnstld/template-responsivo",
+  "authors": [
+    "Denis Toledo <contato@denistoledo.com.br>"
+  ],
+  "description": "template responsivo",
+  "license": "MIT"
+}
