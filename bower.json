@@ -6,5 +6,8 @@
     "Denis Toledo <contato@denistoledo.com.br>"
   ],
   "description": "template responsivo",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "less": "~2.5.1"
+  }
 }
