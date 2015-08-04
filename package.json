@@ -1,0 +1,19 @@
+{
+    "name": "template-responsivo",
+    "version": "1.0.0",
+    "description": "template responsivo",
+    "main": "gulpfile.js",
+    "dependencies": {
+        "gulp": "^3.9.0",
+        "gulp-less": "^3.0.3",
+        "gulp-minify-css": "^1.2.0"
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dnstld/template-responsivo.git"
+    },
+    "author": "Denis Toledo",
+    "license": "ISC",
+    "homepage": "https://github.com/dnstld/template-responsivo#readme"
+}
