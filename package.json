@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "template responsivo",
   "main": "gulpfile.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.3",
     "gulp-minify-css": "^1.2.0",
+    "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dnstld/template-responsivo.git"
