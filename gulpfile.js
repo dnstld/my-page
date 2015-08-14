@@ -45,7 +45,7 @@ gulp.task("browserSync", function() {
 		},
 		files: [
 			"index.html",
-			"dev/less/main.less",
+			"dev/less/**/*.less",
 			"dev/js/main.js"
 		]
 	});
