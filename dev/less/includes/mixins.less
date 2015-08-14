@@ -1,0 +1,59 @@
+.clearfix {
+    &:after {
+        display: block;
+        clear: both;
+        visibility: hidden;
+        content: "";
+    }
+}
+.boxSizing(@value) {
+    box-sizing: @value;
+    -moz-box-sizing: @value;
+    -webkit-box-sizing: @value;
+}
+.borderRadius(@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+.opacity(@opacity: 0.4) {
+    @opacityPercentage: 100 * @opacity;
+    opacity: @opacity;
+    -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opacityPercentage})";
+    filter: ~"alpha(opacity=@{opacityPercentage})";
+}
+.hiddenText {
+    text-indent: -999px;
+    overflow: hidden;
+}
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+    background: @color;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, @start), color-stop(1, @stop));
+    background: -ms-linear-gradient(top, @start, @stop);
+    background: -moz-linear-gradient(center top, @start 0%, @stop 100%);
+    background: -o-linear-gradient(top, @start, @stop);
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@start,@stop));
+}
+.placeholder(@color) {
+    &::-webkit-input-placeholder,
+    &::-moz-input-placeholder,
+    &:-moz-input-placeholder,
+    &:-ms-input-placeholder,
+    &:-input-placeholder {
+       color: @color;
+    }
+}
+.transition(@duration: 0.2s, @properties: all, @ease: ease-out) {
+    -webkit-transition: @properties @duration @ease;
+    -moz-transition: @properties @duration @ease;
+    -o-transition: @properties @duration @ease;
+    transition: @properties @duration @ease;
+}
+.animation(@animationName, @animationDuration: 0.5, @animationDirection: linear, @animationLoop: infinite) {
+    -webkit-animation: @animationName @animationDuration @animationDirection @animationLoop;
+    -moz-animation: @animationName @animationDuration @animationDirection @animationLoop;
+    -ms-animation: @animationName @animationDuration @animationDirection @animationLoop;
+    -o-animation: @animationName @animationDuration @animationDirection @animationLoop;
+    animation: @animationName @animationDuration @animationDirection @animationLoop;
+}

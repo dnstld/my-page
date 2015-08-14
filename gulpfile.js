@@ -6,7 +6,12 @@ var gulp = require("gulp"),
 	uglify = require("gulp-uglify"),
 	concat = require("gulp-concat"),
 	browserSync = require("browser-sync"),
-	reload = browserSync.reload;
+	reload = browserSync.reload,
+	deleteLines = require("gulp-delete-lines"),
+
+	// paths
+	mainJsPath = "dev/js/main.js",
+	jqueryPath = "vendor/jquery/dist/jquery.js";
 
 gulp.task("compile-less", function() {
 	gulp.src("dev/less/main.less")
@@ -23,7 +28,10 @@ gulp.task("compile-less", function() {
 });
 
 gulp.task("scripts", function() {
-	gulp.src("dev/js/main.js")
+	gulp.src([
+			jqueryPath,
+			mainJsPath
+		])
 		.pipe(plumber())
 		.pipe(concat("main.js"))
 		.pipe(uglify().on("error", function() {
@@ -49,6 +57,25 @@ gulp.task("browserSync", function() {
 			"dev/js/main.js"
 		]
 	});
+});
+
+gulp.task("production", function() {
+	gulp.src("index.html")
+		.pipe(plumber())
+		.pipe(deleteLines({
+			"filters": [
+				/<script\s+src=/i
+			]
+		}))
+		.pipe(deleteLines({
+			"filters": [
+				/<link\s+rel=/i
+			]
+		}))
+		.pipe(rename({
+			suffix: ".production"
+		}))
+		.pipe(gulp.dest("./"))
 });
 
 gulp.task("default", ["compile-less", "scripts", "browserSync"]);
