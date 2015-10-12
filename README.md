@@ -14,4 +14,4 @@ HTML + LESS + JS + Gulp
 Demo
 --------------------------------------------------------------------------------
 
-[http://denistoledo.com.br/rwd-template](http://denistoledo.com.br/rwd-template)
+[My personal web page](http://denistoledo.com.br)
