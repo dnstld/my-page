@@ -18,3 +18,10 @@ Tasks:
 - gulp-concat
 - gulp-delete-lines
 - browser-sync
+
+
+Instalação
+--------------------------------------------------------------------------------
+
+- bower install
+- npm install

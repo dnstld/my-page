@@ -9,10 +9,13 @@ var gulp = require("gulp"),
 	reload = browserSync.reload,
 	deleteLines = require("gulp-delete-lines"),
 
-	// paths
+	// scripts
 	mainJsPath = "dev/js/main.js",
 	jqueryPath = "vendor/jquery/dist/jquery.js";
 
+/**
+ * compila o less, minifica o css, renomeia e salva o arquivo
+ */
 gulp.task("compile-less", function() {
 	gulp.src("dev/less/main.less")
 		.pipe(plumber())
@@ -26,7 +29,9 @@ gulp.task("compile-less", function() {
 			stream: true
 		}))
 });
-
+/**
+ * concatena, minifica, renomeia e salva o arquivo
+ */
 gulp.task("scripts", function() {
 	gulp.src([
 			jqueryPath,
@@ -45,7 +50,9 @@ gulp.task("scripts", function() {
 			stream: true
 		}))
 });
-
+/**
+ * sincroniza os navegadores
+ */
 gulp.task("browserSync", function() {
 	browserSync({
 		server: {
@@ -58,7 +65,9 @@ gulp.task("browserSync", function() {
 		]
 	});
 });
-
+/**
+ * remove os scripts e links do html
+ */
 gulp.task("production", function() {
 	gulp.src("index.html")
 		.pipe(plumber())
@@ -79,12 +88,3 @@ gulp.task("production", function() {
 });
 
 gulp.task("default", ["compile-less", "scripts", "browserSync"]);
-
-
-
-
-
-
-
-
-
