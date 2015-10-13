@@ -1,15 +1,20 @@
-Template responsivo (RWD Template)
+Template responsivo
 ================================================================================
 
 
 Descrição
 --------------------------------------------------------------------------------
 
-Template responsivo HTML5 + LESS + Gulp + Browsersync que utilizo em meus projetos pessoais
+Template responsivo HTML5 + LESS + Gulp + Browsersync que utilizo em meus projetos.
 
+Tasks:
 
-
-Demo
---------------------------------------------------------------------------------
-
-[My personal web page](http://denistoledo.com.br)
+- gulp
+- gulp-less
+- gulp-rename
+- gulp-minify-css
+- gulp-plumber
+- gulp-uglify
+- gulp-concat
+- gulp-delete-lines
+- browser-sync
