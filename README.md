@@ -1,11 +1,11 @@
-Template responsivo
+RWD Template
 ================================================================================
 
 
-Descrição
+Description
 --------------------------------------------------------------------------------
 
-Template responsivo HTML5 + LESS + Gulp + Browsersync que utilizo em meus projetos.
+Responsive template HTML5 + LESS + Gulp + Browsersync that I use in my personal projects.
 
 Tasks:
 
@@ -20,8 +20,11 @@ Tasks:
 - browser-sync
 
 
-Instalação
+Instalation
 --------------------------------------------------------------------------------
 
 - bower install
 - npm install
+
+gulp: command not found?
+Solution by [Benoît Boucart](http://blog.webbb.be/command-not-found-node-npm/)

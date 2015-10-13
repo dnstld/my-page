@@ -1,7 +1,7 @@
 {
-  "name": "template-responsivo",
+  "name": "RWD Template",
   "version": "1.0.0",
-  "description": "Template responsivo HTML5 + LESS + Gulp + Browsersync que utilizo em meus projetos.",
+  "description": "Responsive template HTML5 + LESS + Gulp + Browsersync that I use in my personal projects.",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -17,9 +17,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dnstld/template-responsivo.git"
+    "url": "git+https://github.com/dnstld/rwd-template.git"
   },
   "author": "Denis Toledo",
   "license": "ISC",
-  "homepage": "https://github.com/dnstld/template-responsivo#readme"
+  "homepage": "https://github.com/dnstld/rwd-template#readme"
 }
