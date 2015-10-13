@@ -1,13 +1,11 @@
-Personal RWD Template
+Template responsivo (RWD Template)
 ================================================================================
 
 
-Description
+Descrição
 --------------------------------------------------------------------------------
 
-Simple responsive template that I use to start my projects.
-
-HTML + LESS + JS + Gulp
+Template responsivo HTML5 + LESS + Gulp + Browsersync que utilizo em meus projetos pessoais
 
 
 
