@@ -1,0 +1,45 @@
+span.icon-menu {
+	position: absolute;
+	z-index: 100;
+	top: 1em;
+	right: 1em;
+	font-size: 2em;
+	color: white;
+	cursor: pointer;
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	left: -20em;
+	z-index: 90;
+	background: rgba(0, 0, 0, .8);
+	min-height: 100%;
+	height: 100%;
+	padding-top: 1em;
+	box-sizing: border-box;
+	transition: all .3s;
+
+	&.showMenu {
+		left: 0;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		width: 20em;
+		overflow: hidden;
+
+		li {
+			a {
+				color: @txtDefaultColor;
+				display: block;
+				padding-left: 2em;
+				text-decoration: none;
+				text-transform: uppercase;
+				width: 100%;
+				line-height: 2em;
+			}
+		}
+	}
+}
