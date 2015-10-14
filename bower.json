@@ -1,11 +1,11 @@
 {
-    "name": "rwd-template",
+    "name": "my-page",
     "version": "1.0.0",
-    "homepage": "https://github.com/dnstld/rwd-template",
+    "homepage": "https://github.com/dnstld/my-page",
     "authors": [
         "Denis Toledo <contato@denistoledo.com.br>"
     ],
-    "description": "Responsive template HTML5 + LESS + Gulp + Browsersync that I use in my personal projects.",
+    "description": "My website",
     "license": "MIT",
     "devDependencies": {
         "less": "~2.5.1"
