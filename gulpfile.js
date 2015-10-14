@@ -8,6 +8,7 @@ var gulp = require("gulp"),
 	browserSync = require("browser-sync"),
 	reload = browserSync.reload,
 	deleteLines = require("gulp-delete-lines"),
+	insertLines = require('gulp-insert-lines'),
 
 	// scripts
 	mainJsPath = "dev/js/main.js",
@@ -26,6 +27,7 @@ gulp.task("compile-less", function() {
 			stream: true
 		}))
 });
+
 gulp.task("scripts", function() {
 	gulp.src([
 			jqueryPath,
@@ -44,6 +46,7 @@ gulp.task("scripts", function() {
 			stream: true
 		}))
 });
+
 gulp.task("browserSync", function() {
 	browserSync({
 		server: {
@@ -56,19 +59,28 @@ gulp.task("browserSync", function() {
 		]
 	});
 });
+
 gulp.task("production", function() {
 	gulp.src("index.html")
 		.pipe(plumber())
 		.pipe(deleteLines({
 			"filters": [
-				/<script\s+src=/i
-			]
-		}))
-		.pipe(deleteLines({
-			"filters": [
 				/<link\s+rel=/i
 			]
 		}))
+		.pipe(insertLines({
+			"before": /<\/head>$/,
+			"lineBefore": '        <link rel="stylesheet" type="text/css" href="dist/css/main.min.css">',
+	    }))
+		.pipe(deleteLines({
+			"filters": [
+				/<script\s+src=/i
+			]
+		}))
+	    .pipe(insertLines({
+			"before": /<\/body>$/,
+			"lineBefore": '        <script src="dist/js/main.min.js"></script>'
+	    }))
 		.pipe(rename({
 			suffix: ".production"
 		}))
