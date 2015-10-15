@@ -11,34 +11,91 @@ span.icon-menu {
 nav {
 	position: absolute;
 	top: 0;
-	left: -20em;
+	left: -19em;
 	z-index: 90;
-	background: rgba(0, 0, 0, .8);
+	background: rgba(0, 0, 0, .7);
 	min-height: 100%;
 	height: 100%;
-	padding-top: 1em;
-	box-sizing: border-box;
-	transition: all .3s;
+	transition: all .4s;
 
 	&.showMenu {
 		left: 0;
 	}
 
+	span.acessibilidade {
+		overflow: hidden;
+		display: block;
+		width: 15em;
+		margin: 2em;
+
+		span {
+			display: block;
+			cursor: pointer;
+			float: right;
+			font-size: 1.5em;
+			margin-left: 1em;
+			color: white;
+		}
+	}
+
 	ul {
 		list-style: none;
 		padding: 0;
-		width: 20em;
+		width: 15em;
+		margin: 2em;
 		overflow: hidden;
 
 		li {
 			a {
+				width: 100%;
 				color: @txtDefaultColor;
 				display: block;
-				padding-left: 2em;
 				text-decoration: none;
-				text-transform: uppercase;
-				width: 100%;
-				line-height: 2em;
+				border-bottom: 1px solid #222;
+				margin-bottom: 1em;
+				padding: 1em 0;
+
+				span {
+					display: block;
+					float: left;
+					margin-right: 1em;
+					color: #444;
+					transition: all .4s;
+				}
+				&:hover {
+					span {
+						color: inherit;
+					}
+				}
+			}
+		}
+	}
+	aside {
+		width: 100%;
+		width: 15em;
+		margin: 2em;
+
+		a {
+			display: block;
+			float: left;
+			font-size: 3em;
+			cursor: pointer;
+			text-decoration: none;
+			color: inherit;
+			transition: all .4s;
+
+			& + a {
+				margin-left: 1em;
+			}
+
+			&.icon-github:hover {
+				color: #222;
+			}
+			&.icon-linkedin2:hover {
+				color: #006fa6;
+			}
+			&.icon-twitter:hover {
+				color: #55acee;
 			}
 		}
 	}
