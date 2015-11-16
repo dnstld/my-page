@@ -11,8 +11,9 @@ var gulp = require("gulp"),
 	insertLines = require('gulp-insert-lines'),
 
 	// scripts
-	mainJsPath = "dev/js/main.js",
-	jqueryPath = "vendor/jquery/dist/jquery.js";
+	mainJs = "dev/js/main.js",
+	jquery = "vendor/jquery/dist/jquery.js",
+	jqueryCenter = "vendor/jquery-center-js/jquery.center.js";
 
 gulp.task("compile-less", function() {
 	gulp.src("dev/less/main.less")
@@ -30,8 +31,9 @@ gulp.task("compile-less", function() {
 
 gulp.task("scripts", function() {
 	gulp.src([
-			jqueryPath,
-			mainJsPath
+			jquery,
+			jqueryCenter,
+			mainJs
 		])
 		.pipe(plumber())
 		.pipe(concat("main.js"))

@@ -25,8 +25,37 @@ var MyPage = {
 	init: function() {
 		"use strict";
 
-		MyPage.showMenu();
+          MyPage.alturaPaginaInicial();
+		MyPage.mostraMenu();
 	},
+     /**
+     * define altura 100% da pagina inicial
+     * @access public
+     * @desc inicializa
+     *
+     * @return {Void}
+     */
+     alturaPaginaInicial: function() {
+          "use strict";
+
+          var altura = $(document).height();
+
+          $(".inicio").css("height", altura);
+
+          MyPage.centralizaPaginaInicial();
+     },
+     /**
+     * centraliza pagina inicial
+     * @access public
+     * @desc inicializa
+     *
+     * @return {Void}
+     */
+     centralizaPaginaInicial: function() {
+          "use strict";
+
+          $(".dadosIniciais").center($(document));
+     },
 	/**
      * show hide menu
      * @access public
@@ -34,13 +63,13 @@ var MyPage = {
      *
      * @return {Void}
      */
-	showMenu: function() {
+	mostraMenu: function() {
 		"use strict";
 
 		var iconMenu = $("span.icon-menu");
 
 		iconMenu.on("click", function() {
-			$("nav").toggleClass("showMenu");
+			$("nav").toggleClass("mostraMenu");
 		});
 	}
 }

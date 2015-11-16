@@ -4,6 +4,7 @@ body {
 	background: @bgColor;
 	color: @txtDefaultColor;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	height: 100%;
 }
 
 .fullContainer {
@@ -15,8 +16,7 @@ body {
 		margin: 0 auto;
 
 		> .content {
-			width: 100%;
-			min-width: 100%;
+			width: calc(~"100% - 40px");
 			padding: 0 20px;
 		}
 	}
