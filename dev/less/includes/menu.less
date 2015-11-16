@@ -1,5 +1,5 @@
 span.icon-menu {
-	position: absolute;
+	position: fixed;
 	z-index: 100;
 	top: 1em;
 	right: 1em;
@@ -9,7 +9,7 @@ span.icon-menu {
 }
 
 nav {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: -70%;
 	z-index: 90;
@@ -63,6 +63,10 @@ nav {
 	nav {
 		width: 250px;
 		left: 0;
-		z-index: 0;
+		z-index: auto;
+	}
+	.fullContainer {
+		width: calc(~"100% - 250px");
+		margin-left: 250px;
 	}
 }

@@ -12,8 +12,7 @@ var gulp = require("gulp"),
 
 	// scripts
 	mainJs = "dev/js/main.js",
-	jquery = "vendor/jquery/dist/jquery.js",
-	jqueryCenter = "vendor/jquery-center-js/jquery.center.js";
+	jquery = "vendor/jquery/dist/jquery.js";
 
 gulp.task("compile-less", function() {
 	gulp.src("dev/less/main.less")
@@ -32,7 +31,6 @@ gulp.task("compile-less", function() {
 gulp.task("scripts", function() {
 	gulp.src([
 			jquery,
-			jqueryCenter,
 			mainJs
 		])
 		.pipe(plumber())

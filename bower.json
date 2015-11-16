@@ -8,8 +8,7 @@
   "description": "My website",
   "license": "MIT",
   "devDependencies": {
-    "less": "~2.5.1",
-    "jquery-center-js": "~1.0.0"
+    "less": "~2.5.1"
   },
   "dependencies": {
     "jquery": "~2.1.4"

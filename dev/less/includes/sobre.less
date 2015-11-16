@@ -1,6 +1,5 @@
 .inicio {
 	text-align: center;
-	min-height: 100%;
 
 	.dadosIniciais {
 		picture {
@@ -8,6 +7,31 @@
 				width: 100px;
 				display: block;
 				margin: 0 auto;
+			}
+		}
+		a {
+			text-decoration: none;
+			color: @txtDefaultColor;
+			display: block;
+			margin-bottom: 5px;
+		}
+		aside {
+			a {
+				font-size: 2em;
+				padding: 10px;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.inicio {
+		.dadosIniciais {
+			picture {
+				img {
+					width: 150px;
+				}
 			}
 		}
 	}

@@ -29,9 +29,9 @@ var MyPage = {
 		MyPage.mostraMenu();
 	},
      /**
-     * define altura 100% da pagina inicial
+     * alturaPaginaInicial
      * @access public
-     * @desc inicializa
+     * @desc define altura 100% da pagina inicia
      *
      * @return {Void}
      */
@@ -45,16 +45,20 @@ var MyPage = {
           MyPage.centralizaPaginaInicial();
      },
      /**
-     * centraliza pagina inicial
+     * centralizaPaginaInicial
      * @access public
-     * @desc inicializa
+     * @desc centraliza pagina inicial
      *
      * @return {Void}
      */
      centralizaPaginaInicial: function() {
           "use strict";
 
-          $(".dadosIniciais").center($(document));
+          $(".dadosIniciais").css("position", "relative");
+          $(".dadosIniciais").css("top", Math.max(0, (($(".inicio").height() - $(".dadosIniciais").outerHeight()) / 2) + $(".inicio").scrollTop()) + "px");
+          $(".dadosIniciais").css("left", Math.max(0, (($(".inicio").width() - $(".dadosIniciais").outerWidth()) / 2) + $(".inicio").scrollLeft()) + "px");
+
+          return this;
      },
 	/**
      * show hide menu
