@@ -38,7 +38,7 @@ var MyPage = {
      alturaPaginaInicial: function() {
           "use strict";
 
-          var altura = $(document).height();
+          var altura = $(window).height();
 
           $(".inicio").css("height", altura);
 
