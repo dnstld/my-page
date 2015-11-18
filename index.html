@@ -67,13 +67,13 @@
 		<!-- sobre -->
 		<div class="fullContainer">
 			<div class="container">
-				<hr>
 				<div class="content sobre">
 					<h2><span class="icon-sobre"></span> Sobre mim</h2>
 					<p>Olá, meu nome é Denis e tenho 34 anos. Nasci em Sumaré/SP e atualmente moro em Brasília/DF.</p>
 					<p>Sou desenvolvedor front-end a pouco mais de 2 anos e designer gráfico a mais de 10.</p>
 					<p>Adoro a possibilidade de poder criar um projeto desde a parte gráfica até o desenvolvimento de conteúdos online.</p>
 					<p>Se você quer um website, identidade visual ou outro, entre em contato comigo! :D</p>
+					<hr>
 					<h3>Skills</h3>
 					<p>HTML5, CSS3, Less, Javascript, jQuery, Wordpress, web design responsivo, cross-browser, SEO, acessibilidade, Git, Linux, metodologias ágeis, pacote Adobe.</p>
 				</div>
@@ -82,7 +82,6 @@
 		<!-- portfolio -->
 		<div class="fullContainer">
 			<div class="container portfolio">
-				<hr>
 				<div class="content">
 					<h2><span class="icon-portfolio"></span> Portfolio</h2>
 					<p>Aqui vai o portfolio</p>
@@ -92,10 +91,25 @@
 		<!-- contato -->
 		<div class="fullContainer">
 			<div class="container contato">
-				<hr>
 				<div class="content">
 					<h2><span class="icon-contato"></span> Contato</h2>
-					<p>Aqui vai meus contatos</p>
+					<p>Sinta-se à vontade para entrar em contato =)</p>
+
+					<form method="POST" id="formulario">
+						<label for="nome">
+							Nome
+							<input type="text" name="nome" id="nome">
+						</label>
+						<label for="email">
+							E-mail
+							<input type="email" name="email" id="email">
+						</label>
+						<label for="mensagem">
+							Mensagem
+							<textarea name="mensagem" id="mensagem" rows="5"></textarea>
+						</label>
+						<input type="submit" name="enviar" value="Enviar">
+					</form>
 				</div>
 			</div>
 		</div>
@@ -103,6 +117,7 @@
 
 		<!-- scripts -->
 		<script src="vendor/jquery/dist/jquery.min.js"></script>
+		<script src="vendor/jquery-validation/dist/jquery.validate.js"></script>
 		<script src="dev/js/main.js"></script>
 	</body>
 </html>

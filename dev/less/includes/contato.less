@@ -1,0 +1,61 @@
+.contato {
+	form {
+		width: 100%;
+
+		label {
+			text-align: left;
+			display: block;
+			width: 90%;
+			margin: 0 5%;
+
+			& + label {
+				margin-top: 15px;
+			}
+			input,
+			textarea {
+				width: 90%;
+				padding: 0 5%;
+				border-style: none;
+
+				.validClass {
+					color: green;
+				}
+			}
+			input {
+				height: 30px;
+			}
+			textarea {
+				padding: 5%;
+			}
+			.errorClass {
+				color: red;
+				margin-top: 5px;
+				font-size: .8em;
+
+				&.icon-close:before {
+					display: inline-block;
+					margin-right: 5px;
+				}
+			}
+			.validClass {
+				color: green;
+			}
+		}
+
+		input[type=submit] {
+			margin: 30px 10% 0;
+			width: 80%;
+			border: 1px solid #222;
+			background: #000;
+			color: @txtDefaultColor;
+			padding: 15px 0;
+			cursor: pointer;
+			transition: all .4s;
+
+			&:hover {
+				background: #222;
+				border-color: #000;
+			}
+		}
+	}
+}

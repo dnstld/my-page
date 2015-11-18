@@ -8,11 +8,13 @@ var gulp = require("gulp"),
 	browserSync = require("browser-sync"),
 	reload = browserSync.reload,
 	deleteLines = require("gulp-delete-lines"),
-	insertLines = require('gulp-insert-lines'),
+	insertLines = require("gulp-insert-lines"),
+	connect = require("gulp-connect-php"),
 
 	// scripts
-	mainJs = "dev/js/main.js",
-	jquery = "vendor/jquery/dist/jquery.js";
+	jquery = "vendor/jquery/dist/jquery.js",
+	jqueryValidate = "vendor/jquery-validation/dist/jquery.validate.js",
+	mainJs = "dev/js/main.js";
 
 gulp.task("compile-less", function() {
 	gulp.src("dev/less/main.less")
@@ -31,6 +33,7 @@ gulp.task("compile-less", function() {
 gulp.task("scripts", function() {
 	gulp.src([
 			jquery,
+			jqueryValidate,
 			mainJs
 		])
 		.pipe(plumber())
@@ -50,13 +53,25 @@ gulp.task("scripts", function() {
 gulp.task("browserSync", function() {
 	browserSync({
 		server: {
-			baseDir: "./"
+			baseDir: "./",
+			directory: true,
+			browser: "google chrome"
 		},
 		files: [
 			"index.html",
 			"dev/less/**/*.less",
-			"dev/js/main.js"
+			"dev/js/main.js",
+			"php/*php"
 		]
+	});
+});
+
+gulp.task("connect", function() {
+	connect.server({
+		root: "php",
+	    base: 'http://localhost',
+	    port: 3000,
+	    livereload: true
 	});
 });
 
@@ -87,4 +102,4 @@ gulp.task("production", function() {
 		.pipe(gulp.dest("./"))
 });
 
-gulp.task("default", ["compile-less", "scripts", "browserSync"]);
+gulp.task("default", ["compile-less", "scripts", "connect", "browserSync"]);
