@@ -90,8 +90,10 @@ var MyPage = {
             mobileFirst: true,
             responsive: [
                 {
-                    breakpoint: 500,
-                    arrows: true,
+                    breakpoint: 400,
+                    settings: {
+                        arrows: true
+                    }
                 },
             ]
         });

@@ -13,6 +13,7 @@ var gulp = require("gulp"),
 
 	// scripts
 	jquery = "vendor/jquery/dist/jquery.js",
+	slickCarousel = "vendor/slick-carousel/slick/slick.js",
 	jqueryValidate = "vendor/jquery-validation/dist/jquery.validate.js",
 	mainJs = "dev/js/main.js";
 
@@ -33,6 +34,7 @@ gulp.task("compile-less", function() {
 gulp.task("scripts", function() {
 	gulp.src([
 			jquery,
+			slickCarousel,
 			jqueryValidate,
 			mainJs
 		])
