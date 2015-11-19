@@ -9,9 +9,11 @@
   "license": "MIT",
   "devDependencies": {
     "less": "~2.5.1",
-    "jquery-validation": "~1.14.0"
+    "jquery-validation": "~1.14.0",
+    "slick-carousel": "~1.5.8"
   },
   "dependencies": {
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "slick-carousel": "~1.5.8"
   }
 }

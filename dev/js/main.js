@@ -27,6 +27,7 @@ var MyPage = {
 
         MyPage.alturaPaginaInicial();
         MyPage.mostraMenu();
+        MyPage.portfolioOffline();
 		MyPage.jqueryValidation();
 	},
      /**
@@ -77,6 +78,24 @@ var MyPage = {
 			$("nav").toggleClass("mostraMenu");
 		});
 	},
+    portfolioOffline: function() {
+        "use strict";
+
+        $(".offline").slick({
+            accessibility: true,
+            adaptiveHeight: true,
+            variableWidth: true,
+            arrows: false,
+            centerMode: true,
+            mobileFirst: true,
+            responsive: [
+                {
+                    breakpoint: 500,
+                    arrows: true,
+                },
+            ]
+        });
+    },
      /**
      * show hide menu
      * @access public
