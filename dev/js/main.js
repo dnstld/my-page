@@ -26,14 +26,14 @@ var MyPage = {
 		"use strict";
 
         MyPage.alturaPaginaInicial();
-        MyPage.mostraMenu();
+        MyPage.toggleMenu();
         MyPage.portfolioOffline();
 		MyPage.jqueryValidation();
 	},
      /**
      * alturaPaginaInicial
      * @access public
-     * @desc define altura 100% da pagina inicia
+     * @desc define altura da pagina inicial
      *
      * @return {Void}
      */
@@ -49,7 +49,7 @@ var MyPage = {
      /**
      * centralizaPaginaInicial
      * @access public
-     * @desc centraliza pagina inicial
+     * @desc centraliza conteudo da pagina inicial
      *
      * @return {Void}
      */
@@ -63,13 +63,13 @@ var MyPage = {
         return this;
      },
 	/**
-     * show hide menu
+     * toggleMenu
      * @access public
-     * @desc inicializa
+     * @desc mostra/oculta do menu
      *
      * @return {Void}
      */
-	mostraMenu: function() {
+	toggleMenu: function() {
 		"use strict";
 
 		var iconMenu = $("span.icon-menu");
@@ -78,35 +78,55 @@ var MyPage = {
 			$("nav").toggleClass("mostraMenu");
 		});
 	},
+    /**
+     * portfolioOffline
+     * @access public
+     * @desc configuracao do plugin para o portfolio offline
+     *
+     * @return {Void}
+     */
     portfolioOffline: function() {
         "use strict";
 
         $(".offline").slick({
             accessibility: true,
+            autoplay: false,
+            autoplaySpeed: 5000,
             adaptiveHeight: true,
-            variableWidth: true,
             arrows: false,
+            centerPadding: "50px",
             centerMode: true,
             mobileFirst: true,
             responsive: [
                 {
-                    breakpoint: 400,
+                    breakpoint: 500,
                     settings: {
-                        arrows: true
+                        slidesToShow: 2
                     }
                 },
+                {
+                    breakpoint: 1000,
+                    settings: {
+                        arrows: true,
+                        slidesToShow: 3,
+                        centerPadding: 0
+                    }
+                }
             ]
         });
     },
      /**
-     * show hide menu
+     * jqueryValidation
      * @access public
-     * @desc inicializa
+     * @desc valida e submita o formulario de contato
      *
      * @return {Void}
      */
     jqueryValidation: function() {
         "use strict";
+
+        var txtBotaoEnviar = $("input[type=submit");
+        txtBotaoEnviar.val("Enviar");
 
         jQuery.validator.setDefaults({
             errorClass: "errorClass icon-close",
@@ -158,7 +178,7 @@ var MyPage = {
                     dataType: "html",
                     data: dados,
                     beforeSend: function() {
-                        console.log("enviando..........");
+                        txtBotaoEnviar.val("Enviando...");
                     },
                     success: function(response) {
                         console.log("success: " + response);

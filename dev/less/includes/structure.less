@@ -13,11 +13,23 @@ body {
 	overflow: hidden;
 
 	+ .fullContainer {
-		margin-bottom: 30px;
+		margin-bottom: 50px;
+	}
+
+	@media (min-width: 500px) {
+		+ .fullContainer {
+			margin-bottom: 100px;
+		}
+	}
+
+	@media (min-width: 1000px) {
+		+ .fullContainer {
+			margin-bottom: 200px;
+		}
 	}
 
 	> .container {
-		max-width: 500px;
+		max-width: 700px;
 		margin: 0 auto;
 
 		> .content {
