@@ -9,12 +9,11 @@ var gulp = require("gulp"),
 	reload = browserSync.reload,
 	deleteLines = require("gulp-delete-lines"),
 	insertLines = require("gulp-insert-lines"),
-	connect = require("gulp-connect-php"),
 
 	// scripts
-	jquery = "vendor/jquery/dist/jquery.js",
-	slickCarousel = "vendor/slick-carousel/slick/slick.js",
-	jqueryValidate = "vendor/jquery-validation/dist/jquery.validate.js",
+	jquery = "node_modules/jquery/dist/jquery.js",
+	slickCarousel = "node_modules/slick-carousel/slick/slick.js",
+	jqueryValidate = "node_modules/jquery-validation/dist/jquery.validate.js",
 	mainJs = "dev/js/main.js";
 
 gulp.task("compile-less", function() {
@@ -62,18 +61,8 @@ gulp.task("browserSync", function() {
 		files: [
 			"index.html",
 			"dev/less/**/*.less",
-			"dev/js/main.js",
-			"php/*php"
+			"dev/js/main.js"
 		]
-	});
-});
-
-gulp.task("connect", function() {
-	connect.server({
-		root: "php",
-	    base: 'http://localhost',
-	    port: 3000,
-	    livereload: true
 	});
 });
 
@@ -104,4 +93,4 @@ gulp.task("production", function() {
 		.pipe(gulp.dest("./"))
 });
 
-gulp.task("default", ["compile-less", "scripts", "connect", "browserSync"]);
+gulp.task("default", ["compile-less", "scripts", "browserSync"]);
