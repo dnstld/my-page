@@ -114,8 +114,24 @@ var MyPage = {
                 }
             ]
         });
+
+        MyPage.popupPortfolio();
     },
-     /**
+    /**
+     * portfolioOffline
+     * @access public
+     * @desc configuracao do plugin para o portfolio offline
+     *
+     * @return {Void}
+     */
+    popupPortfolio: function() {
+        "use strict";
+
+        $(".popup-link").magnificPopup({
+            type: "image"
+        });
+    },
+    /**
      * jqueryValidation
      * @access public
      * @desc valida e submita o formulario de contato
