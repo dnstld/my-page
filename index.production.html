@@ -15,25 +15,25 @@
 		<!-- eu sou o inicio -->
 		<!-- menu -->
 		<span class="icon-menu"></span>
-		<nav>
+		<nav class="menu">
 			<ul>
 				<li>
-					<a href="#" title=""><span class="icon-inicio">
+					<a href="#inicio" title=""><span class="icon-inicio">
 						</span>Início
 					</a>
 				</li>
 				<li>
-					<a href="#" title=""><span class="icon-sobre">
+					<a href="#sobre" title=""><span class="icon-sobre">
 						</span>Sobre mim
 					</a>
 				</li>
 				<li>
-					<a href="#" title=""><span class="icon-portfolio">
+					<a href="#portfolio" title=""><span class="icon-portfolio">
 						</span>Portfolio
 					</a>
 				</li>
 				<li>
-					<a href="#" title=""><span class="icon-contato">
+					<a href="#contato" title=""><span class="icon-contato">
 						</span>Contato
 					</a>
 				</li>
@@ -41,7 +41,7 @@
 		</nav>
 		<!-- pagina inicial -->
 		<div class="fullContainer">
-			<div class="container">
+			<div class="container" id="inicio">
 				<div class="content inicio">
 					<div class="dadosIniciais">
 						<picture>
@@ -66,13 +66,14 @@
 		<!-- sobre -->
 		<div class="fullContainer">
 			<div class="container">
+				<hr class="separaContainers" id="sobre">
+
 				<div class="content sobre">
 					<h2><span class="icon-sobre"></span> Sobre mim</h2>
 					<p>Olá, meu nome é Denis e tenho 34 anos. Nasci em Sumaré/SP e atualmente moro em Brasília/DF.</p>
 					<p>Sou desenvolvedor front-end há pouco mais de 2 anos e designer gráfico a mais de 10.</p>
 					<p>Adoro a possibilidade de fazer parte de um time e participar de projetos desde sua concepção até o desenvolvimento e entrega.</p>
 					<p>Se você quer um website, identidade visual ou outro, entre em contato comigo! :D</p>
-					<hr>
 					<h3>Skills</h3>
 					<p>HTML5, CSS3, Less, Javascript, jQuery, Wordpress, web design responsivo, cross-browser, SEO, acessibilidade, Git, Linux, metodologias ágeis, pacote Adobe.</p>
 				</div>
@@ -80,8 +81,10 @@
 		</div>
 		<!-- portfolio -->
 		<div class="fullContainer">
-			<div class="container portfolio">
-				<div class="content">
+			<div class="container">
+				<hr class="separaContainers" id="portfolio">
+
+				<div class="content portfolio">
 					<h2><span class="icon-portfolio"></span> Portfolio</h2>
 
 					<h3>Como front-end <span class="icon-coffee"></span></h3>
@@ -101,9 +104,22 @@
 
 							<a href="http://corzinhando.com.br/" target="_blank">Visitar</a>
 						</div>
-					</div>
+						<div class="containerOnline">
+							<span class="icon-notebook icon corzinhando"></span>
 
-					<hr>
+							<h2>Outro</h2>
+
+							<p>Website institucional responsivo desenvolvido em HTML5 para profissional de arquitetura.</p>
+
+							<span class="icon-html5"></span>
+							<span class="icon-pc"></span>
+							<span class="icon-notebook"></span>
+							<span class="icon-tablet"></span>
+							<span class="icon-mobile"></span>
+
+							<a href="http://corzinhando.com.br/" target="_blank">Visitar</a>
+						</div>
+					</div>
 
 					<h3>Como designer gráfico <span class="icon-offline"></span></h3>
 					<div class="offline">
@@ -162,8 +178,10 @@
 		</div>
 		<!-- contato -->
 		<div class="fullContainer">
-			<div class="container contato">
-				<div class="content">
+			<div class="container">
+				<hr class="separaContainers" id="contato">
+
+				<div class="content contato">
 					<h2><span class="icon-contato"></span> Contato</h2>
 					<p>Sinta-se à vontade para entrar em contato =)</p>
 

@@ -27,6 +27,8 @@ var MyPage = {
 
         MyPage.alturaPaginaInicial();
         MyPage.toggleMenu();
+        MyPage.closeMenu();
+        MyPage.smoothScroll();
         MyPage.portfolioOffline();
 		MyPage.jqueryValidation();
 	},
@@ -78,6 +80,36 @@ var MyPage = {
 			$("nav").toggleClass("mostraMenu");
 		});
 	},
+    /**
+     * closeMenu
+     * @access public
+     * @desc scroll
+     *
+     * @return {Void}
+     */
+    closeMenu: function() {
+        "use strict";
+
+        $(".menu a").on("click", function() {
+            $("nav").toggleClass("mostraMenu");
+        });
+    },
+    /**
+     * smoothScroll
+     * @access public
+     * @desc scroll
+     *
+     * @return {Void}
+     */
+    smoothScroll: function() {
+        "use strict";
+
+        $(".menu a").smoothScroll({
+            easing: "swing",
+            speed: 500,
+            preventDefault: true
+        });
+    },
     /**
      * portfolioOffline
      * @access public

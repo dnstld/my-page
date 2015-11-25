@@ -16,6 +16,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.2.0",
     "jquery": "^2.1.4",
+    "jquery-smooth-scroll": "^1.5.6",
     "jquery-validation": "^1.14.0",
     "less": "^2.5.3",
     "magnific-popup": "^1.0.0",
