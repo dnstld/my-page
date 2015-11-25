@@ -1,4 +1,35 @@
 .portfolio {
+	.online {
+		.containerOnline {
+			.icon {
+				display: block;
+				font-size: 7em;
+
+				&.corzinhando {
+					color: #969f3c;
+				}
+			}
+			h2 {
+				margin: 0 0 10px 0;
+			}
+			a {
+				display: block;
+				margin: 20px 20% 0;
+				width: 60%;
+				border: 1px solid #222;
+				background: #000;
+				color: @txtDefaultColor;
+				padding: 15px 0;
+				text-decoration: none;
+				transition: all .4s;
+
+				&:hover {
+					background: #969f3c;
+					border-color: #000;
+				}
+			}
+		}
+	}
 	picture {
 		img {
 			width: calc(~"100% - 50px");
