@@ -173,8 +173,8 @@ var MyPage = {
     jqueryValidation: function() {
         "use strict";
 
-        var txtBotaoEnviar = $("input[type=submit");
-        txtBotaoEnviar.val("Enviar");
+        var botaoEnviar = $("button"),
+            formulario = $("#formulario");
 
         jQuery.validator.setDefaults({
             errorClass: "errorClass icon-close",
@@ -182,62 +182,75 @@ var MyPage = {
             validClass: "validClass"
         });
 
-        $("#formulario").validate({
-            rules: {
-                nome: {
-                    required: true,
-                    minlength: 3
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                mensagem: {
-                    required: true
-                },
-            },
-            messages: {
-                nome: {
-                    required: "Digite seu nome",
-                    minlength: jQuery.validator.format("Digite seu nome com no mínimo {0} caracteres.")
-                },
-                email: {
-                    required: "Digite seu e-mail",
-                    email: "Por favor, insira um e-mail válido."
-                },
-                mensagem: {
-                    required: "Digite sua mensagem"
-                }
-            },
-            highlight: function(element, errorClass, validClass) {
-                $(element).addClass(errorClass).removeClass(validClass);
-                //$(element.form).find("label[for=" + element.id + "]").addClass(errorClass);
-            },
-            unhighlight: function(element, errorClass, validClass) {
-                $(element).removeClass(errorClass).addClass(validClass);
-                //$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
-            },
-            submitHandler: function(form) {
-                var dados = $(form).serialize();
-
-                $.ajax({
-                    type: "POST",
-                    url: "public/novo/php/formulario.php",
-                    dataType: "html",
-                    data: dados,
-                    beforeSend: function() {
-                        txtBotaoEnviar.val("Enviando...");
+        botaoEnviar.on("click", function() {
+            formulario.validate({
+                rules: {
+                    nome: {
+                        required: true,
+                        minlength: 3
                     },
-                    success: function(response) {
-                        console.log("success: " + response);
-                        form.submit();
+                    email: {
+                        required: true,
+                        email: true
                     },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                        console.log(xhr.status);
-                        console.log(thrownError);
+                    mensagem: {
+                        required: true
+                    },
+                },
+                messages: {
+                    nome: {
+                        required: "Qual é seu nome?",
+                        minlength: jQuery.validator.format("Ele deve conter no mínimo {0} caracteres.")
+                    },
+                    email: {
+                        required: "Qual é seu e-mail?",
+                        email: "Por favor, insira um e-mail válido."
+                    },
+                    mensagem: {
+                        required: "Escreva sua mensagem."
                     }
-                });
-            }
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass(errorClass).removeClass(validClass);
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass(errorClass).addClass(validClass);
+                },
+                submitHandler: function(form) {
+                    var dados = $(form).serialize();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "processa.php",
+                        data: dados,
+                        dataType: "text",
+                        cache: false,
+                        beforeSend: function() {
+                            botaoEnviar.text("Enviando...");
+                        },
+                        complete: function() {
+                            botaoEnviar.text("Aguardando retorno...");
+                        },
+                        success: function() {
+                            setTimeout(function() {
+                                botaoEnviar.addClass("sucesso").text("Obrigado pelo contato.");
+
+                                setTimeout(function() {
+                                    botaoEnviar.removeClass("sucesso").text("Enviar");
+                                }, 2000);
+                            }, 2000);
+
+                            $("#nome, #email, #mensagem").val("");
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            console.log(xhr.status);
+                            console.log(thrownError);
+                        }
+                    });
+
+                    return false;
+                }
+            });
         });
     }
 }
