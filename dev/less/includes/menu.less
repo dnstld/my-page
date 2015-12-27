@@ -13,10 +13,11 @@ nav {
 	top: 0;
 	left: -70%;
 	z-index: 90;
-	background: rgba(0, 0, 0, .8);
+	background: @bgMenuColor;
 	width: 70%;
 	min-height: 100%;
 	height: 100%;
+	box-shadow: 0 0 10px #000;
 	transition: all .4s;
 
 	&.mostraMenu {
@@ -32,7 +33,7 @@ nav {
 		li {
 			a {
 				width: 100%;
-				color: @txtDefaultColor;
+				color: @bgColor;
 				display: block;
 				text-decoration: none;
 				margin-bottom: .5em;
@@ -48,7 +49,7 @@ nav {
 				}
 				&:hover {
 					span {
-						color: @iconColor;
+						color: @linkColor;
 					}
 				}
 			}
