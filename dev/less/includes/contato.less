@@ -18,7 +18,7 @@
 				border-style: none;
 
 				.validClass {
-					color: green;
+					color: @validClass;
 				}
 				&:focus {
 					outline: 0;
@@ -31,7 +31,7 @@
 				padding: 5%;
 			}
 			.errorClass {
-				color: red;
+				color: @errorClass;
 				margin-top: 5px;
 				font-size: .8em;
 
@@ -41,7 +41,7 @@
 				}
 			}
 			.validClass {
-				color: green;
+				color: @validClass;
 			}
 		}
 
@@ -60,7 +60,7 @@
 				border-color: #000;
 			}
 			&.sucesso {
-				background: #556B2F;
+				background: @validClass;
 			}
 			&:focus {
 				outline: 0;
