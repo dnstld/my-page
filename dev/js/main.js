@@ -28,6 +28,7 @@ var MyPage = {
         MyPage.alturaPaginaInicial();
         MyPage.toggleMenu();
         MyPage.closeMenu();
+        MyPage.activeLinkMenu();
         MyPage.smoothScroll();
         MyPage.portfolioOffline();
 		MyPage.jqueryValidation();
@@ -92,6 +93,22 @@ var MyPage = {
 
         $(".menu a").on("click", function() {
             $("nav").toggleClass("mostraMenu");
+        });
+    },
+    /**
+     * activeLinkMenu
+     * @access public
+     * @desc scroll
+     *
+     * @return {Void}
+     */
+    activeLinkMenu: function() {
+        "use strict";
+
+        $(".menu a.menu-principal").on("click", function() {
+            $(".menu a span").removeClass("ativo");
+
+            $(this).find("span").addClass("ativo");
         });
     },
     /**
