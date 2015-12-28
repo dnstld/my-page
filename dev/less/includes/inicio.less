@@ -7,6 +7,12 @@
 				margin: 0 auto;
 			}
 		}
+		h1 {
+			span {
+				color: #fff;
+				-webkit-animation: pisca 1s alternate infinite linear;
+			}
+		}
 		a {
 			text-decoration: none;
 			color: @txtDefaultColor;
@@ -21,16 +27,19 @@
 				transition: all .4s;
 
 				&.github {
-					color: #555;
+					&:hover {
+						color: #555;
+					}
 				}
 				&.linkedin {
-					color: #008cc9;
+					&:hover {
+						color: #008cc9;
+					}
 				}
 				&.twitter {
-					color: #55acee;
-				}
-				&:hover {
-					color: @txtDefaultColor;
+					&:hover {
+						color: #55acee;
+					}
 				}
 			}
 		}
@@ -47,4 +56,16 @@
 			}
 		}
 	}
+}
+
+@-webkit-keyframes pisca { 
+	0% {
+		opacity: 1;
+	} 
+	50% {
+		opacity: 0;
+	} 
+	100% {
+		opacity: 1;
+	} 
 }
