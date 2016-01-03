@@ -28,9 +28,8 @@ var MyPage = {
         MyPage.alturaPaginaInicial();
         MyPage.toggleMenu();
         MyPage.closeMenu();
-        MyPage.activeLinkMenu();
         MyPage.smoothScroll();
-        MyPage.portfolioOffline();
+        MyPage.touchPortfolioOffline();
 		MyPage.jqueryValidation();
 	},
      /**
@@ -48,7 +47,7 @@ var MyPage = {
         $(".inicio").css("height", altura);
 
         MyPage.centralizaPaginaInicial();
-     },
+    },
      /**
      * centralizaPaginaInicial
      * @access public
@@ -64,11 +63,11 @@ var MyPage = {
         $(".dadosIniciais").css("left", Math.max(0, (($(".inicio").width() - $(".dadosIniciais").outerWidth()) / 2) + $(".inicio").scrollLeft()) + "px");
 
         return this;
-     },
+    },
 	/**
      * toggleMenu
      * @access public
-     * @desc mostra/oculta do menu
+     * @desc mostra/oculta menu mobile
      *
      * @return {Void}
      */
@@ -84,7 +83,7 @@ var MyPage = {
     /**
      * closeMenu
      * @access public
-     * @desc scroll
+     * @desc fecha o menu mobile quando clicado em algum item
      *
      * @return {Void}
      */
@@ -96,19 +95,45 @@ var MyPage = {
         });
     },
     /**
-     * activeLinkMenu
+     * activeLinkMenuOnScroll
      * @access public
      * @desc scroll
+     * @param {number} posContato posicao do container contato
      *
      * @return {Void}
      */
-    activeLinkMenu: function() {
+    activeLinkMenuOnScroll: function(posContato) {
         "use strict";
 
-        $(".menu a.menu-principal").on("click", function() {
-            $(".menu a span").removeClass("ativo");
+        var metadeDoDocumento = $(window).height() / 2,
+            posInicio = $("#inicio").position().top,
+            posSobre = $("#sobre").position().top,
+            posPortfolio = $("#portfolio").position().top,
+            posContato = posContato;
 
-            $(this).find("span").addClass("ativo");
+        $(window).on("scroll", function() {
+            var posicaoScroll = $(document).scrollTop();
+
+            console.log("posicaoScroll = " + posicaoScroll  + "---");
+            console.log("posSobre = " + posSobre);
+            console.log("posPortfolio = " + posPortfolio);
+            console.log("posContato = " + posContato);
+
+            if (posicaoScroll == 0 || posicaoScroll > posInicio && posicaoScroll < (posSobre - metadeDoDocumento)) {
+                $(".menu a span").removeClass("ativo");
+                $(".menu a span.icon-inicio").addClass("ativo");
+            } else if (posicaoScroll > (posSobre - metadeDoDocumento) && posicaoScroll < (posPortfolio - metadeDoDocumento)) {
+                $(".menu a span").removeClass("ativo");
+                $(".menu a span.icon-sobre").addClass("ativo");
+            } else if (posicaoScroll > (posPortfolio - metadeDoDocumento) && posicaoScroll < (posContato - metadeDoDocumento)) {
+                $(".menu a span").removeClass("ativo");
+                $(".menu a span.icon-portfolio").addClass("ativo");
+            } else if (posicaoScroll > (posContato - metadeDoDocumento)) {
+                $(".menu a span").removeClass("ativo");
+                $(".menu a span.icon-contato").addClass("ativo");
+            } else {
+                return false;
+            }
         });
     },
     /**
@@ -128,13 +153,13 @@ var MyPage = {
         });
     },
     /**
-     * portfolioOffline
+     * touchPortfolioOffline
      * @access public
-     * @desc configuracao do plugin para o portfolio offline
+     * @desc evento touch portfolio offline
      *
      * @return {Void}
      */
-    portfolioOffline: function() {
+    touchPortfolioOffline: function() {
         "use strict";
 
         $(".offline").slick({
@@ -164,16 +189,16 @@ var MyPage = {
             ]
         });
 
-        MyPage.popupPortfolio();
+        MyPage.modalPortfolioOffline();
     },
     /**
-     * portfolioOffline
+     * modalPortfolioOffline
      * @access public
-     * @desc configuracao do plugin para o portfolio offline
+     * @desc modal portfolio offline
      *
      * @return {Void}
      */
-    popupPortfolio: function() {
+    modalPortfolioOffline: function() {
         "use strict";
 
         $(".popup-link").magnificPopup({
@@ -272,8 +297,29 @@ var MyPage = {
     }
 }
 
-$(function() {
+/**
+ * document ready
+ * @desc quando o documento estiver pronto...
+ */
+$(document).on("ready", function() {
 	"use strict";
 
-	MyPage.init();
+    MyPage.init();
+});
+
+/**
+ * window load
+ * @desc quando carregar a pagina...
+ */
+$(window).on("load", function() {
+    "use strict";
+
+    // pega a posicao do container contato
+    var posContato = $("#contato").position().top;
+    MyPage.activeLinkMenuOnScroll(posContato);
+
+    // va para o inicio
+    $("html, body").animate({
+        scrollTop: 0
+    }, "slow");
 });
