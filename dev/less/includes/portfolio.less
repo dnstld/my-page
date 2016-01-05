@@ -14,6 +14,9 @@
 				display: block;
 				font-size: 6em;
 
+				&.denis {
+					color: @subTitleColor;
+				}
 				&.corzinhando {
 					color: #969f3c;
 				}
@@ -23,7 +26,7 @@
 			}
 			h2 {
 				margin: 0 0 10px 0;
-				color: @subTitleColor;
+				color: @titleColor;
 			}
 			a {
 				display: block;
@@ -38,6 +41,11 @@
 
 				&:hover {
 					border-color: #000;
+				}
+				&.blogDenis {
+					&:hover {
+						background: @subTitleColor;
+					}
 				}
 				&.corzinhando {
 					&:hover {

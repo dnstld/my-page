@@ -4,10 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta name="robots" content="index, nofollow">
-		<meta name="description" content="">
-		<meta name="keywords" content="">
-		<meta name="author" content="Denis Toledo @dnstld">
-		<title></title>
+		<title>Desenvolvedor front-end</title>
+		<meta name="description" content="Meu nome é Denis Toledo e sou programador de interfaces e designer gráfico.">
+		<meta name="keywords" content="programador front-end, programador de interfaces, front-end developer, freelance front-end, freelance designer gráfico, portfolio front-end, portfolio designer gráfico">
 		<!-- styles -->
         <link rel="stylesheet" type="text/css" href="dist/css/main.min.css">
 	</head>
@@ -16,25 +15,31 @@
 		<!-- menu -->
 		<span class="icon-menu"></span>
 		<nav class="menu">
+			<span>MENU</span>
 			<ul>
 				<li>
-					<a href="#inicio" title=""><span class="icon-inicio">
+					<a href="#inicio" class="menu-principal"><span class="icon-inicio ativo">
 						</span>Início
 					</a>
 				</li>
 				<li>
-					<a href="#sobre" title=""><span class="icon-sobre">
+					<a href="#sobre" class="menu-principal"><span class="icon-sobre">
 						</span>Sobre mim
 					</a>
 				</li>
 				<li>
-					<a href="#portfolio" title=""><span class="icon-portfolio">
+					<a href="#portfolio" class="menu-principal"><span class="icon-portfolio">
 						</span>Portfolio
 					</a>
 				</li>
 				<li>
-					<a href="#contato" title=""><span class="icon-contato">
+					<a href="#contato" class="menu-principal"><span class="icon-contato">
 						</span>Contato
+					</a>
+				</li>
+				<li>
+					<a href="http://denistoledo.com.br/blog/" title="Conheça meu blog =)" target="_blank" class="blog"><span class="icon-coffee">
+						</span>Meu blog
 					</a>
 				</li>
 			</ul>
@@ -48,16 +53,17 @@
 							<source srcset="assets/svg/logo-denis-toledo.svg" type="image/svg+xml">
 							<img src="assets/img/logo-denis-toledo.png" alt="Identidade Visual Denis Toledo">
 						</picture>
-						<h1>Denis Toledo</h1>
-						<a href="#" title=""><span class="icon-contato">
-							</span>contato@denistoledo.com.br
+						<h1>Denis Toledo<span>|</span></h1>
+						<a href="#" title="">
+							<span class="icon-contato"></span> contato@denistoledo.com.br
 						</a>
-						<p><span class="icon-whatsapp">
-							</span>+55 11 98201-3667
+						<p>
+							<span class="icon-whatsapp"></span> +55 11 98201-3667
 						</p>
 						<aside>
 							<a href="https://github.com/dnstld" target="_blank" title="Meu repositório no GitHub" class="icon-github github"></a>
 							<a href="https://br.linkedin.com/in/denistoledo" target="_blank" title="Meu perfil no LinkedIn" class="icon-linkedin linkedin"></a>
+							<a href="https://twitter.com/dnstld" target="_blank" title="Meu Twitter" class="icon-twitter twitter"></a>
 						</aside>
 					</div>
 				</div>
@@ -70,12 +76,12 @@
 
 				<div class="content sobre">
 					<h2><span class="icon-sobre"></span> Sobre mim</h2>
-					<p>Olá, meu nome é Denis e tenho 34 anos. Nasci em Sumaré/SP e atualmente moro em Brasília/DF.</p>
-					<p>Sou desenvolvedor front-end há pouco mais de 2 anos e designer gráfico há mais de 10.</p>
-					<p>Adoro a possibilidade de fazer parte de um time e participar de projetos desde sua concepção até o desenvolvimento e entrega.</p>
-					<p>Se você quer um website, identidade visual ou outro, entre em contato comigo! :D</p>
-					<h3>Skills</h3>
-					<p>HTML5, CSS3, Less, Javascript, jQuery, Wordpress, web design responsivo, cross-browser, SEO, acessibilidade, Git, Linux, metodologias ágeis, pacote Adobe.</p>
+					<p>Olá, meu nome é Denis, tenho 34 anos e atualmente moro em Brasília/DF.</p>
+					<p>Venho atuando na área de <strong>design gráfico</strong> há 10 anos e sou <strong>desenvolvedor</strong> há 3.</p>
+					<p>Como <strong>desenvolvedor front-end</strong> participei de metodologias ágeis: scrum e kanban, ideações de produtos, implementações de testes AB, revisões de códigos, refatorações, pair programming, processos de publicação, entre outros.</p>
+					<p>Dentre minhas competências domínio HTML5, CSS3, pré-processadores CSS (Less e Sass), javascript, bibliotecas javascript, web design responsivo, mobile first, cross-browser, git, wordpress, tratamento de imagens e editores de imagens vetoriais.</p>
+					<p>Atualmente mantenho dois projetos: um blog de receitas saudáveis chamado <a href="http://corzinhando.com.br" target="_blank">corzinhando</a> e um <a href="http://denistoledo.com.br/blog/" title="Blog sobre front-end" target="_blank">blog</a> falando sobre front-end.</p>
+					<p>Se você quer um website, identidade visual ou outro, entre em contato comigo!</p>
 				</div>
 			</div>
 		</div>
@@ -89,6 +95,21 @@
 
 					<h3>Como front-end <span class="icon-coffee"></span></h3>
 					<div class="online">
+						<div class="containerOnline">
+							<span class="icon-notebook icon denis"></span>
+
+							<h2>Meu blog</h2>
+
+							<p>Blog pessoal responsivo com conteúdo para desenvolvedores front-end.</p>
+
+							<span class="icon-wordpress"></span>
+							<span class="icon-pc"></span>
+							<span class="icon-notebook"></span>
+							<span class="icon-tablet"></span>
+							<span class="icon-mobile"></span>
+
+							<a href="http://denistoledo.com.br/blog" class="blogDenis" target="_blank">Visitar</a>
+						</div>
 						<div class="containerOnline">
 							<span class="icon-notebook icon corzinhando"></span>
 
@@ -220,6 +241,16 @@
 		<!-- o fim e o meio -->
 
 		<!-- scripts -->
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-67625706-1', 'auto');
+			ga('send', 'pageview');
+		</script>
         <script src="dist/js/main.min.js"></script>
 	</body>
 </html>

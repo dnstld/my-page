@@ -114,11 +114,6 @@ var MyPage = {
         $(window).on("scroll", function() {
             var posicaoScroll = $(document).scrollTop();
 
-            console.log("posicaoScroll = " + posicaoScroll  + "---");
-            console.log("posSobre = " + posSobre);
-            console.log("posPortfolio = " + posPortfolio);
-            console.log("posContato = " + posContato);
-
             if (posicaoScroll == 0 || posicaoScroll > posInicio && posicaoScroll < (posSobre - metadeDoDocumento)) {
                 $(".menu a span").removeClass("ativo");
                 $(".menu a span.icon-inicio").addClass("ativo");
@@ -322,4 +317,6 @@ $(window).on("load", function() {
     $("html, body").animate({
         scrollTop: 0
     }, "slow");
+
+    console.log("Procuro manter o código limpo e de fácil manutenção.");
 });
