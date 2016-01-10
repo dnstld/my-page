@@ -309,6 +309,10 @@ $(document).on("ready", function() {
 $(window).on("load", function() {
     "use strict";
 
+    // oculta loader
+    $("span.loader").hide();
+    $("div.offline").show();
+
     // pega a posicao do container contato
     var posContato = $("#contato").position().top;
     MyPage.activeLinkMenuOnScroll(posContato);
@@ -317,6 +321,4 @@ $(window).on("load", function() {
     $("html, body").animate({
         scrollTop: 0
     }, "slow");
-
-    console.log("Procuro manter o código limpo e de fácil manutenção.");
 });
