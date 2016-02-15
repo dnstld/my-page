@@ -13,35 +13,48 @@
 	<body>
 		<!-- eu sou o inicio -->
 		<!-- menu -->
-		<span class="icon-menu"></span>
+		<span class="icon-menu">
+			<img src="assets/icons/icon-menu.svg" alt="" class="svg">
+		</span>
 		<nav class="menu">
 			<span>MENU</span>
 			<ul>
 				<li>
-					<a href="#inicio" class="menu-principal"><span class="icon-inicio ativo">
-						</span>Início
+					<a href="#inicio" class="menu-principal">
+						<img src="assets/icons/icon-inicio.svg" alt="" class="svg icon-inicio">
+						Início
 					</a>
 				</li>
 				<li>
-					<a href="#sobre" class="menu-principal"><span class="icon-sobre">
-						</span>Sobre mim
+					<a href="#sobre" class="menu-principal">
+						<img src="assets/icons/icon-sobre-mim.svg" alt="" class="icon-sobre svg">
+						Sobre mim
 					</a>
 				</li>
 				<li>
-					<a href="#portfolio" class="menu-principal"><span class="icon-portfolio">
-						</span>Portfolio
+					<a href="#portfolio" class="menu-principal">
+						<img src="assets/icons/icon-portfolio.svg" alt="" class="icon-portfolio svg">
+						Portfolio
 					</a>
 				</li>
 				<li>
-					<a href="#contato" class="menu-principal"><span class="icon-contato">
-						</span>Contato
+					<a href="#contato" class="menu-principal">
+						<img src="assets/icons/icon-contato.svg" alt="" class="icon-contato svg">
+						Contato
 					</a>
 				</li>
 				<li>
-					<a href="http://denistoledo.com.br/blog/" title="Conheça meu blog =)" target="_blank" class="blog"><span class="icon-coffee">
-						</span>Meu blog
+					<a href="http://denistoledo.com.br/blog/" title="Conheça meu blog =)" target="_blank" class="blog">
+						<img src="assets/icons/icon-blog.svg" alt="" class="icon-blog svg">
+						Meu blog
 					</a>
 				</li>
+				<!-- <li>
+					<a href="https://www.youtube.com/c/DenisToledo81" title="Conheça meu blog =)" target="_blank" class="canal">
+						<img src="assets/icons/icon-youtube.svg" alt="" class="icon-youtube svg">
+						Meu canal
+					</a>
+				</li> -->
 			</ul>
 		</nav>
 		<!-- pagina inicial -->
@@ -49,21 +62,32 @@
 			<div class="container" id="inicio">
 				<div class="content inicio">
 					<div class="dadosIniciais">
-						<picture>
-							<source srcset="assets/svg/logo-denis-toledo.svg" type="image/svg+xml">
-							<img src="assets/images/logo-denis-toledo.png" alt="Pictograma Denis Toledo">
-						</picture>
+
+						<img src="assets/svg/logo-denis-toledo.svg" alt="Pictograma Denis Toledo" class="svg">
+
 						<h1>Denis Toledo<span>|</span></h1>
+
 						<a href="mailto:contato@denistoledo.com.br" title="Enviar e-mail">
-							<span class="icon-contato"></span> contato@denistoledo.com.br
+							<img src="assets/icons/icon-email.svg" alt="" class="svg">
+							contato@denistoledo.com.br
 						</a>
 						<p>
-							<span class="icon-whatsapp"></span> +55 11 98201-3667 (TIM)
+							<img src="assets/icons/icon-whatsapp.svg" alt="" class="svg">
+							+55 11 98201-3667 (TIM)
 						</p>
 						<aside>
-							<a href="https://github.com/dnstld" target="_blank" title="Meu repositório no GitHub" class="icon-github github"></a>
-							<a href="https://br.linkedin.com/in/denistoledo" target="_blank" title="Meu perfil no LinkedIn" class="icon-linkedin linkedin"></a>
-							<a href="https://twitter.com/dnstld" target="_blank" title="Meu Twitter" class="icon-twitter twitter"></a>
+							<!-- <a href="https://www.youtube.com/c/DenisToledo81" target="_blank" title="Meu canal no YoutTube" class="canal">
+								<img src="assets/icons/icon-youtube.svg" alt="" class="svg">
+							</a> -->
+							<a href="https://github.com/dnstld" target="_blank" title="Meu repositório no GitHub" class="github">
+								<img src="assets/icons/icon-github.svg" alt="" class="svg">
+							</a>
+							<a href="https://br.linkedin.com/in/denistoledo" target="_blank" title="Meu perfil no LinkedIn" class="linkedin">
+								<img src="assets/icons/icon-linkedin.svg" alt="" class="svg">
+							</a>
+							<a href="https://twitter.com/dnstld" target="_blank" title="Meu Twitter" class="twitter">
+								<img src="assets/icons/icon-twitter.svg" alt="" class="svg">
+							</a>
 						</aside>
 					</div>
 				</div>
@@ -75,11 +99,11 @@
 				<hr class="separaContainers" id="sobre">
 
 				<div class="content sobre">
-					<h2><span class="icon-sobre"></span> Sobre mim</h2>
+					<h2><img src="assets/icons/icon-sobre-mim.svg" alt="" class="svg"> Sobre mim</h2>
 					<p>Olá, meu nome é Denis, tenho 34 anos e atualmente moro em Brasília/DF.</p>
-					<p>Venho atuando na área de <strong>design gráfico</strong> há 10 anos e sou <strong>desenvolvedor</strong> há 3.</p>
-					<p>Como <strong>desenvolvedor front-end</strong> participei de metodologias ágeis: scrum e kanban, ideações de produtos, implementações de testes AB, revisões de códigos, refatorações, pair programming, processos de publicação, entre outros.</p>
-					<p>Dentre minhas competências domínio HTML5, CSS3, pré-processadores CSS (Less e Sass), javascript, bibliotecas javascript, web design responsivo, mobile first, cross-browser, git, wordpress, tratamento de imagens e editores de imagens vetoriais.</p>
+					<p>Atuo na área de <strong>web design</strong> há 5 anos e sou <strong>desenvolvedor front-end</strong> há 3. Anteriormente atuava como <strong>designer gráfico</strong> em agências de publicidade.</p>
+					<p>Como <strong>desenvolvedor</strong> participei de metodologias ágeis: scrum e kanban, ideações de produtos, implementações de testes AB, revisões de códigos, refatorações, pair programming, processos de publicação, entre outros.</p>
+					<p>Dentre minhas competências domínio HTML5, CSS3, pré-processadores CSS, JavaScript, bibliotecas e frameworks JavaScript, Gulp, GIT, TortoiseSVN, Web Design Responsivo, Mobile First, Cross-browser, Wordpress, Scrum, Kanban, tratamento de imagens e editores de imagens vetoriais (Pacote Adobe).</p>
 					<p>Atualmente mantenho dois projetos: um blog de receitas saudáveis chamado <a href="http://corzinhando.com.br" target="_blank">corzinhando</a> e um <a href="http://denistoledo.com.br/blog/" title="Blog sobre front-end" target="_blank">blog</a> falando sobre front-end.</p>
 					<p>Se você quer um website, identidade visual ou outro, entre em contato comigo!</p>
 				</div>
@@ -91,58 +115,56 @@
 				<hr class="separaContainers" id="portfolio">
 
 				<div class="content portfolio">
-					<h2><span class="icon-portfolio"></span> Portfolio</h2>
+					<h2><img src="assets/icons/icon-portfolio.svg" alt="" class="svg"> Portfolio</h2>
 
-					<h3>Como front-end <span class="icon-coffee"></span></h3>
+					<h3>Como front-end <img src="assets/icons/icon-portfolio-frontend.svg" alt="" class="svg"></h3>
 					<div class="online">
 						<div class="containerOnline">
-							<span class="icon-notebook icon denis"></span>
-
-							<h2>Meu blog</h2>
+							<img src="assets/images/front-end/blog-denis-toledo.jpg" alt="">
 
 							<p>Blog pessoal responsivo com conteúdo para desenvolvedores front-end.</p>
 
-							<span class="icon-wordpress"></span>
-							<span class="icon-pc"></span>
-							<span class="icon-notebook"></span>
-							<span class="icon-tablet"></span>
-							<span class="icon-mobile"></span>
+							<a href="http://denistoledo.com.br/blog" target="_blank">Visitar</a>
 
-							<a href="http://denistoledo.com.br/blog" class="blogDenis" target="_blank">Visitar</a>
+							<p>...</p>
 						</div>
 						<div class="containerOnline">
-							<span class="icon-notebook icon corzinhando"></span>
-
-							<h2>Corzinhando</h2>
+							<img src="assets/images/front-end/blog-corzinhando.jpg" alt="">
 
 							<p>Blog responsivo desenvolvido em Wordpress para publicações de receitas saudáveis.</p>
 
-							<span class="icon-wordpress"></span>
-							<span class="icon-pc"></span>
-							<span class="icon-notebook"></span>
-							<span class="icon-tablet"></span>
-							<span class="icon-mobile"></span>
+							<a href="http://corzinhando.com.br/" target="_blank">Visitar</a>
 
-							<a href="http://corzinhando.com.br/" class="corzinhando" target="_blank">Visitar</a>
+							<p>...</p>
 						</div>
 						<div class="containerOnline">
-							<span class="icon-notebook icon camila"></span>
-
-							<h2>Camila Alamino</h2>
+							<img src="assets/images/front-end/website-camila-alamino.jpg" alt="">
 
 							<p>Website responsivo desenvolvido em HTML5 para profissional de arquitetura.</p>
 
-							<span class="icon-html5"></span>
-							<span class="icon-pc"></span>
-							<span class="icon-notebook"></span>
-							<span class="icon-tablet"></span>
-							<span class="icon-mobile"></span>
+							<a href="http://www.camilaalamino.com.br/" target="_blank">Visitar</a>
 
-							<a href="http://www.camilaalamino.com.br/" class="camila" target="_blank">Visitar</a>
+							<p>...</p>
+						</div>
+						<div class="containerOnline">
+							<img src="assets/images/front-end/codepen-homer-simpson.jpg" alt="">
+
+							<p>Simples ilustração do personagem Homer Simpson desenvolvido em HTML5 e CSS3.</p>
+
+							<a href="http://codepen.io/dnstld/pen/EzIpe" target="_blank">Visitar</a>
+
+							<p>...</p>
+						</div>
+						<div class="containerOnline">
+							<img src="assets/images/front-end/codepen-genius.jpg" alt="">
+
+							<p>Brinquedo Genius muito popular na década de 1980 desenvolvido em HTML5 e CSS3.</p>
+
+							<a href="http://codepen.io/dnstld/pen/lpaAr" target="_blank">Visitar</a>
 						</div>
 					</div>
 
-					<h3>Como designer gráfico <span class="icon-offline"></span></h3>
+					<h3>Como designer gráfico <img src="assets/icons/icon-portfolio-design.svg" alt="" class="svg"></h3>
 					<span class="loader">
 						<img src="assets/gif/loader.gif">
 					</span>
@@ -220,7 +242,7 @@
 				<hr class="separaContainers" id="contato">
 
 				<div class="content contato">
-					<h2><span class="icon-contato"></span> Contato</h2>
+					<h2><img src="assets/icons/icon-contato.svg" alt="" class="svg"> Contato</h2>
 					<p>Sinta-se à vontade para entrar em contato =)</p>
 
 					<form method="POST" id="formulario">

@@ -19,27 +19,79 @@
 			color: @txtDefaultColor;
 			display: inline;
 			margin-bottom: 5px;
+
+			svg {
+				path {
+					fill: @txtDefaultColor;
+				}
+			}
+		}
+		p {
+			svg {
+				path {
+					fill: @txtDefaultColor;
+				}
+			}
 		}
 		aside {
 			a {
 				font-size: 2em;
 				padding: 10px;
 				display: inline-block;
-				transition: all .4s;
 
+				svg {
+					width: 30px;
+					height: 30px;
+
+					path {
+						fill: #fff;
+						transition: all .4s;
+
+					}
+				}
+
+				&.canal {
+					&:hover {
+						color: #555;
+
+						svg {
+							path {
+								fill: #cc181e;
+							}
+						}
+					}
+				}
 				&.github {
 					&:hover {
 						color: #555;
+
+						svg {
+							path {
+								fill: #444;
+							}
+						}
 					}
 				}
 				&.linkedin {
 					&:hover {
-						color: #008cc9;
+						color: #555;
+
+						svg {
+							path {
+								fill: #008cc9;
+							}
+						}
 					}
 				}
 				&.twitter {
 					&:hover {
-						color: #55acee;
+						color: #555;
+
+						svg {
+							path {
+								fill: #55acee;
+							}
+						}
 					}
 				}
 			}

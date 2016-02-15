@@ -1,11 +1,19 @@
 span.icon-menu {
 	position: fixed;
+	display: block;
 	z-index: 100;
 	top: 1em;
 	right: 1em;
-	font-size: 2em;
-	color: white;
 	cursor: pointer;
+
+	svg {
+		width: 30px;
+		height: 30px;
+
+		path {
+			fill: #fff;
+		}
+	}
 }
 
 nav {
@@ -50,40 +58,24 @@ nav {
 				padding: .5em 0;
 				text-align: left;
 
-				span {
-					display: block;
-					float: left;
-					margin-right: 1em;
-					color: #444;
-					transition: all .4s;
-
-					&.ativo {
-						color: @iconMenuColor
+				svg {
+					path {
+						fill: #444;
+						transition: all .4s;
 					}
 				}
 				&:hover {
-					span {
-						color: @iconMenuColor;
+					svg {
+						path {
+							fill: @iconMenuColor;
+						}
 					}
 				}
-				&.blog {
+				&.blog,
+				&.canal {
 					font-weight: bold;
 					padding: 1em 0;
 					border-top: 1px solid @bgColor;
-
-					&:hover {
-						span {
-							color: @linkColor;
-						}
-					}
-
-					picture,
-					img {
-						display: block;
-						float: left;
-						width: 20px;
-						height: 20px;
-					}
 				}
 			}
 		}

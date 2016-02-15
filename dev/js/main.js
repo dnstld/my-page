@@ -30,7 +30,8 @@ var MyPage = {
         MyPage.closeMenu();
         MyPage.smoothScroll();
         MyPage.touchPortfolioOffline();
-		MyPage.jqueryValidation();
+        MyPage.jqueryValidation();
+		MyPage.inineSVG();
 	},
      /**
      * alturaPaginaInicial
@@ -97,7 +98,7 @@ var MyPage = {
     /**
      * activeLinkMenuOnScroll
      * @access public
-     * @desc scroll
+     * @desc mostra link ativo no scroll da pagina
      * @param {number} posContato posicao do container contato
      *
      * @return {Void}
@@ -109,23 +110,27 @@ var MyPage = {
             posInicio = $("#inicio").position().top,
             posSobre = $("#sobre").position().top,
             posPortfolio = $("#portfolio").position().top,
-            posContato = posContato;
+            posContato = posContato,
+            ativo = "#a6e22e",
+            inativo = "#444";
+
+        $(".menu svg.icon-inicio path").css("fill", ativo);
 
         $(window).on("scroll", function() {
             var posicaoScroll = $(document).scrollTop();
 
             if (posicaoScroll == 0 || posicaoScroll > posInicio && posicaoScroll < (posSobre - metadeDoDocumento)) {
-                $(".menu a span").removeClass("ativo");
-                $(".menu a span.icon-inicio").addClass("ativo");
+                $(".menu svg path").css("fill", inativo);
+                $(".menu svg.icon-inicio path").css("fill", ativo);
             } else if (posicaoScroll > (posSobre - metadeDoDocumento) && posicaoScroll < (posPortfolio - metadeDoDocumento)) {
-                $(".menu a span").removeClass("ativo");
-                $(".menu a span.icon-sobre").addClass("ativo");
+                $(".menu svg path").css("fill", inativo);
+                $(".menu svg.icon-sobre path").css("fill", ativo);
             } else if (posicaoScroll > (posPortfolio - metadeDoDocumento) && posicaoScroll < (posContato - metadeDoDocumento)) {
-                $(".menu a span").removeClass("ativo");
-                $(".menu a span.icon-portfolio").addClass("ativo");
+                $(".menu svg path").css("fill", inativo);
+                $(".menu svg.icon-portfolio path").css("fill", ativo);
             } else if (posicaoScroll > (posContato - metadeDoDocumento)) {
-                $(".menu a span").removeClass("ativo");
-                $(".menu a span.icon-contato").addClass("ativo");
+                $(".menu svg path").css("fill", inativo);
+                $(".menu svg.icon-contato path").css("fill", ativo);
             } else {
                 return false;
             }
@@ -287,6 +292,38 @@ var MyPage = {
 
                     return false;
                 }
+            });
+        });
+    },
+    /**
+     * inineSVG
+     * @access public
+     * @desc troca arquivo.svg para svg inline
+     *
+     * @return {Void}
+     */
+    inineSVG: function() {
+        "use strict";
+
+        $("img.svg").each(function() {
+            var img = $(this),
+                imgClass = img.attr("class"),
+                imgID = img.attr("id"),
+                imgURL = img.attr("src");
+            
+            $.get(imgURL, function(data) {
+                var svg = $(data).find("svg");
+
+                if (typeof imgID !== "undefined") {
+                    svg = svg.attr("id", imgID);
+                }
+
+                if (typeof imgClass !== "undefined") {
+                    svg = svg.attr("class", imgClass);
+                }
+
+                svg = svg.removeAttr("xmlns:a");
+                img.replaceWith(svg);
             });
         });
     }
