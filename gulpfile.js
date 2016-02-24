@@ -5,8 +5,7 @@ var gulp = require("gulp"),
 	plumber = require("gulp-plumber"),
 	uglify = require("gulp-uglify"),
 	concat = require("gulp-concat"),
-	browserSync = require("browser-sync"),
-	reload = browserSync.reload,
+	browserSync = require("browser-sync").create();
 	deleteLines = require("gulp-delete-lines"),
 	insertLines = require("gulp-insert-lines"),
 
@@ -27,9 +26,6 @@ gulp.task("compile-less", function() {
 			suffix: ".min"
 		}))
 		.pipe(gulp.dest("dist/css"))
-		.pipe(reload({
-			stream: true
-		}))
 });
 
 gulp.task("scripts", function() {
@@ -50,24 +46,20 @@ gulp.task("scripts", function() {
 			suffix: ".min"
 		}))
 		.pipe(gulp.dest("dist/js/"))
-		.pipe(reload({
-			stream: true
-		}))
 });
 
 gulp.task("browserSync", function() {
-	browserSync({
-		server: {
+    browserSync.init({
+        server: {
 			baseDir: "./",
-			directory: true,
-			browser: "google chrome"
 		},
+		browser: "google-chrome",
 		files: [
 			"index.html",
 			"dev/less/**/*.less",
 			"dev/js/main.js"
 		]
-	});
+    });
 });
 
 gulp.task("production", function() {
