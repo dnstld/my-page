@@ -17,4 +17,190 @@
 		color: @linkColor;
 		text-decoration: none;
 	}
+
+	.skills {
+		header {
+			width: 100%;
+			display: block;
+			float: left;
+			margin-bottom: 10px;
+
+			span {
+				display: block;
+				float: left;
+				width: 25%;
+				text-align: right;
+				color: @titleColor;
+				font-weight: bold;
+
+				&:nth-child(2) {
+					text-align: left;
+				}
+				&:nth-child(3) {
+					text-align: center;
+					color: @subTitleColor;
+				}
+				&:nth-child(4) {
+					color: @iconMenuColor;
+				}
+			}
+		}
+		.containerCompetencias {
+			width: 100%;
+			overflow: hidden;
+			margin-bottom: 10px;
+
+			h5 {
+				display: block;
+				float: left;
+				width: 25%;
+				text-align: right;
+				margin: 0;
+				padding-right: 10px;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			.containerBar {
+				display: block;
+				float: left;
+				width: 75%;
+
+				.bar {
+					display: block;
+					float: left;
+					height: 10px;
+					margin-top: 3px;
+					border-radius: 0 5px 5px 0;
+					background: @iconMenuColor;
+					background: -moz-linear-gradient(left, rgba(253,149,31,1) 0%, rgba(230,219,116,1) 49%, rgba(166,226,46,1) 100%);
+					background: -webkit-gradient(left top, right top, color-stop(0%, rgba(253,149,31,1)), color-stop(49%, rgba(230,219,116,1)), color-stop(100%, rgba(166,226,46,1)));
+					background: -webkit-linear-gradient(left, rgba(253,149,31,1) 0%, rgba(230,219,116,1) 49%, rgba(166,226,46,1) 100%);
+					background: -o-linear-gradient(left, rgba(253,149,31,1) 0%, rgba(230,219,116,1) 49%, rgba(166,226,46,1) 100%);
+					background: -ms-linear-gradient(left, rgba(253,149,31,1) 0%, rgba(230,219,116,1) 49%, rgba(166,226,46,1) 100%);
+					background: linear-gradient(to right, rgba(253,149,31,1) 0%, rgba(230,219,116,1) 49%, rgba(166,226,46,1) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd951f', endColorstr='#a6e22e', GradientType=1 );
+				}
+			}
+			&.scrum {
+				.containerBar {
+					.bar {
+						width: 80%;
+					}
+				}
+			}
+			&.kanban {
+				.containerBar {
+					.bar {
+						width: 85%;
+					}
+				}
+			}
+			&.html5 {
+				.containerBar {
+					.bar {
+						width: 95%;
+					}
+				}
+			}
+			&.css3 {
+				.containerBar {
+					.bar {
+						width: 90%;
+					}
+				}
+			}
+			&.less {
+				.containerBar {
+					.bar {
+						width: 80%;
+					}
+				}
+			}
+			&.sass {
+				.containerBar {
+					.bar {
+						width: 60%;
+					}
+				}
+			}
+			&.javascript {
+				.containerBar {
+					.bar {
+						width: 60%;
+					}
+				}
+			}
+			&.rwd {
+				.containerBar {
+					.bar {
+						width: 90%;
+					}
+				}
+			}
+			&.gulp {
+				.containerBar {
+					.bar {
+						width: 75%;
+					}
+				}
+			}
+			&.git {
+				.containerBar {
+					.bar {
+						width: 65%;
+					}
+				}
+			}
+			&.tortoise {
+				.containerBar {
+					.bar {
+						width: 40%;
+					}
+				}
+			}
+			&.bootstrap {
+				.containerBar {
+					.bar {
+						width: 80%;
+					}
+				}
+			}
+			&.wordpress {
+				.containerBar {
+					.bar {
+						width: 50%;
+					}
+				}
+			}
+			&.php {
+				.containerBar {
+					.bar {
+						width: 10%;
+					}
+				}
+			}
+			&.java {
+				.containerBar {
+					.bar {
+						width: 5%;
+					}
+				}
+			}
+			&.illustrator {
+				.containerBar {
+					.bar {
+						width: 95%;
+					}
+				}
+			}
+			&.photoshop {
+				.containerBar {
+					.bar {
+						width: 95%;
+					}
+				}
+			}
+		}
+	}
 }
