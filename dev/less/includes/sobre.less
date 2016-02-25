@@ -29,19 +29,43 @@
 				display: block;
 				float: left;
 				width: 25%;
+				font-size: 0.7em;
 				text-align: right;
 				color: @titleColor;
 				font-weight: bold;
+				line-height: 250%;
+
+				@media(min-width: 500px) {
+					font-size: 1em;
+				}
 
 				&:nth-child(2) {
 					text-align: left;
+					border-bottom: 1px solid @titleColor;
 				}
 				&:nth-child(3) {
 					text-align: center;
 					color: @subTitleColor;
+					border-bottom: 1px solid @subTitleColor;
 				}
 				&:nth-child(4) {
 					color: @iconMenuColor;
+					border-bottom: 1px solid @iconMenuColor;
+					position: relative;
+
+					&:before {
+						content: "";
+						display: inline-block;
+						vertical-align: middle;
+						width: 0; 
+						height: 0;
+						border-top: 5px solid transparent;
+						border-bottom: 5px solid transparent;
+						border-left: 5px solid @iconMenuColor;
+						position: absolute;
+						right: -5px;
+						bottom: -5px;
+					}
 				}
 			}
 		}
@@ -50,16 +74,21 @@
 			overflow: hidden;
 			margin-bottom: 10px;
 
-			h5 {
+			h2 {
 				display: block;
 				float: left;
 				width: 25%;
+				font-size: 0.6em;
 				text-align: right;
 				margin: 0;
 				padding-right: 10px;
 				-webkit-box-sizing: border-box;
 				-moz-box-sizing: border-box;
 				box-sizing: border-box;
+
+				@media(min-width: 500px) {
+					font-size: 0.8em;
+				}
 			}
 			.containerBar {
 				display: block;
@@ -85,35 +114,35 @@
 			&.scrum {
 				.containerBar {
 					.bar {
-						width: 80%;
+						width: 75%;
 					}
 				}
 			}
 			&.kanban {
 				.containerBar {
 					.bar {
-						width: 85%;
+						width: 75%;
 					}
 				}
 			}
 			&.html5 {
 				.containerBar {
 					.bar {
-						width: 95%;
+						width: 90%;
 					}
 				}
 			}
 			&.css3 {
 				.containerBar {
 					.bar {
-						width: 90%;
+						width: 80%;
 					}
 				}
 			}
 			&.less {
 				.containerBar {
 					.bar {
-						width: 80%;
+						width: 70%;
 					}
 				}
 			}
@@ -127,14 +156,14 @@
 			&.javascript {
 				.containerBar {
 					.bar {
-						width: 60%;
+						width: 70%;
 					}
 				}
 			}
 			&.rwd {
 				.containerBar {
 					.bar {
-						width: 90%;
+						width: 85%;
 					}
 				}
 			}
@@ -152,17 +181,10 @@
 					}
 				}
 			}
-			&.tortoise {
-				.containerBar {
-					.bar {
-						width: 40%;
-					}
-				}
-			}
 			&.bootstrap {
 				.containerBar {
 					.bar {
-						width: 80%;
+						width: 75%;
 					}
 				}
 			}
