@@ -355,7 +355,7 @@ $(window).on("load", function() {
     MyPage.activeLinkMenuOnScroll(posContato);
 
     // va para o inicio
-    // $("html, body").animate({
-    //     scrollTop: 0
-    // }, "slow");
+    $("html, body").animate({
+        scrollTop: 0
+    }, "slow");
 });
