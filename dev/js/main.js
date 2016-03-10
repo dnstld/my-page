@@ -28,6 +28,7 @@ var MyPage = {
         MyPage.alturaPaginaInicial();
         MyPage.toggleMenu();
         MyPage.closeMenu();
+        MyPage.activeLinkMenuOnScroll();
         MyPage.smoothScroll();
         MyPage.jqueryValidation();
 		MyPage.inineSVG();
@@ -98,22 +99,19 @@ var MyPage = {
      * activeLinkMenuOnScroll
      * @access public
      * @desc mostra link ativo no scroll da pagina
-     * @param {number} posContato posicao do container contato
      *
      * @return {Void}
      */
-    activeLinkMenuOnScroll: function(posContato) {
+    activeLinkMenuOnScroll: function() {
         "use strict";
 
         var metadeDoDocumento = $(window).height() / 2,
             posInicio = $("#inicio").position().top,
             posSobre = $("#sobre").position().top,
             posPortfolio = $("#portfolio").position().top,
-            posContato = posContato,
+            posContato = $("#contato").position().top,
             ativo = "#a6e22e",
             inativo = "#444";
-
-        $(".menu svg.icon-inicio path").css("fill", ativo);
 
         $(window).on("scroll", function() {
             var posicaoScroll = $(document).scrollTop();
@@ -287,14 +285,10 @@ $(document).on("ready", function() {
 
 /**
  * window load
- * @desc quando carregar a pagina...
+ * @desc volta para o inicio quando recarregar a pagina
  */
 $(window).on("load", function() {
     "use strict";
-
-    // pega a posicao do container contato
-    var posContato = $("#contato").position().top;
-    MyPage.activeLinkMenuOnScroll(posContato);
 
     // va para o inicio
     $("html, body").animate({
