@@ -11,8 +11,6 @@ var gulp = require("gulp"),
 
 	// scripts
 	jquery = "node_modules/jquery/dist/jquery.js",
-	slickCarousel = "node_modules/slick-carousel/slick/slick.js",
-	magnificPopup = "node_modules/magnific-popup/dist/jquery.magnific-popup.js",
 	smoothScroll = "node_modules/jquery-smooth-scroll/jquery.smooth-scroll.js",
 	jqueryValidate = "node_modules/jquery-validation/dist/jquery.validate.js",
 	mainJs = "dev/js/main.js";
@@ -31,8 +29,6 @@ gulp.task("compile-less", function() {
 gulp.task("scripts", function() {
 	gulp.src([
 			jquery,
-			slickCarousel,
-			magnificPopup,
 			smoothScroll,
 			jqueryValidate,
 			mainJs

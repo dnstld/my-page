@@ -29,7 +29,6 @@ var MyPage = {
         MyPage.toggleMenu();
         MyPage.closeMenu();
         MyPage.smoothScroll();
-        MyPage.touchPortfolioOffline();
         MyPage.jqueryValidation();
 		MyPage.inineSVG();
 	},
@@ -150,59 +149,6 @@ var MyPage = {
             easing: "swing",
             speed: 500,
             preventDefault: true
-        });
-    },
-    /**
-     * touchPortfolioOffline
-     * @access public
-     * @desc evento touch portfolio offline
-     *
-     * @return {Void}
-     */
-    touchPortfolioOffline: function() {
-        "use strict";
-
-        $(".offline").slick({
-            accessibility: true,
-            autoplay: false,
-            autoplaySpeed: 5000,
-            adaptiveHeight: true,
-            arrows: false,
-            centerPadding: "50px",
-            centerMode: true,
-            mobileFirst: true,
-            responsive: [
-                {
-                    breakpoint: 500,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 1000,
-                    settings: {
-                        arrows: true,
-                        slidesToShow: 3,
-                        centerPadding: 0
-                    }
-                }
-            ]
-        });
-
-        MyPage.modalPortfolioOffline();
-    },
-    /**
-     * modalPortfolioOffline
-     * @access public
-     * @desc modal portfolio offline
-     *
-     * @return {Void}
-     */
-    modalPortfolioOffline: function() {
-        "use strict";
-
-        $(".popup-link").magnificPopup({
-            type: "image"
         });
     },
     /**
@@ -345,10 +291,6 @@ $(document).on("ready", function() {
  */
 $(window).on("load", function() {
     "use strict";
-
-    // oculta loader
-    $("span.loader").hide();
-    $("div.offline").show();
 
     // pega a posicao do container contato
     var posContato = $("#contato").position().top;
