@@ -21,7 +21,7 @@
 		overflow: hidden;
 		margin-bottom: 70px;
 
-		.containerOnline {
+		.container {
 			width: 100%;
 			margin-bottom: 30px;
 
@@ -29,10 +29,42 @@
 				border: 1px solid @txtDefaultColor;
 			}
 			h3 {
-				a.freeCodeCamp {
-					display: inline;
-					color: @linkColor;
-					text-decoration: none;
+				color: @linkColor;
+			}
+			ul {
+				padding: 0;
+
+				li {
+					list-style: none;
+					font-size: 0.8em;
+
+					&:first-child {
+						font-weight: bold;
+						font-size: 1em;
+					}
+
+					&.ajusteLista {
+						display: none;
+					}
+					@media (min-width: 650px) {
+						&.ajusteLista {
+							display: block;
+						}	
+					}
+
+					span.seta {
+						&:before {
+							content: "";
+							display: inline-block;
+							vertical-align: middle;
+							margin-right: 10px;
+							width: 0; 
+							height: 0;
+							border-top: 4px solid transparent;
+							border-bottom: 4px solid transparent;
+							border-left: 4px solid @linkColor;
+						}
+					}
 				}
 			}
 			a.btnVisitar {
@@ -52,7 +84,7 @@
 			}
 		}
 		@media (min-width: 650px) {
-			.containerOnline {
+			.container {
 				width: 46%;
 				margin: 0 2% 30px;
 				float: left;
